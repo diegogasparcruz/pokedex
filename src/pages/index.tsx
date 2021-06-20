@@ -1,5 +1,7 @@
 import Head from 'next/head';
 
+import { Container } from 'styles/pages/Home';
+
 export default function Home() {
   return (
     <div>
@@ -7,11 +9,7 @@ export default function Home() {
         <title>Homepage</title>
       </Head>
 
-      <main>
-        <h1>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-      </main>
+      <Container></Container>
     </div>
   );
 }
