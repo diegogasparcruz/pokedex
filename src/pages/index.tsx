@@ -1,15 +1,18 @@
+import { Header } from 'components/Header';
 import Head from 'next/head';
 
-import { Container } from 'styles/pages/Home';
+import { Container, Main } from 'styles/pages/Home';
 
 export default function Home() {
   return (
-    <div>
+    <Container>
       <Head>
         <title>Homepage</title>
       </Head>
 
-      <Container></Container>
-    </div>
+      <Header />
+
+      <Main></Main>
+    </Container>
   );
 }
