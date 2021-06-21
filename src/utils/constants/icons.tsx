@@ -1,0 +1,50 @@
+// ICONS
+import { Back, Front, Generation, Search, Sort } from 'static/icons';
+
+// TYPES ICON
+import {
+  Bug,
+  Dark,
+  Dragon,
+  Electric,
+  Fairy,
+  Fighting,
+  Fire,
+  Flying,
+  Ghost,
+  Grass,
+  Ground,
+  Ice,
+  Normal,
+  Poison,
+  Psychic,
+  Rock,
+  Steel,
+  Water,
+} from 'static/types';
+
+export const icons = {
+  back: <Back />,
+  front: <Front />,
+  generation: <Generation />,
+  search: <Search />,
+  sort: <Sort />,
+  bug: <Bug />,
+  dark: <Dark />,
+  dragon: <Dragon />,
+  electric: <Electric />,
+  fairy: <Fairy />,
+  fighting: <Fighting />,
+  fire: <Fire />,
+  flying: <Flying />,
+  ghost: <Ghost />,
+  grass: <Grass />,
+  ground: <Ground />,
+  ice: <Ice />,
+  normal: <Normal />,
+  poison: <Poison />,
+  psychic: <Psychic />,
+  rock: <Rock />,
+  steel: <Steel />,
+  water: <Water />,
+};
