@@ -25,7 +25,7 @@ export function Header() {
         name="search"
         placeholder="What Pokémon are you looking for?"
       >
-        <Icon name="search" size={20} />
+        <Icon name="search" size={16} />
       </Input>
     </Container>
   );
