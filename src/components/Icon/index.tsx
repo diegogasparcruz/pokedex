@@ -1,6 +1,6 @@
-import Image from 'next/image';
-
 import { icons } from 'utils/constants/icons';
+
+import { Container } from './styles';
 
 interface IconProps {
   name: string;
@@ -8,5 +8,9 @@ interface IconProps {
 }
 
 export function Icon({ name, size }: IconProps) {
-  return <Image src={icons[name]} width={size} height={size} />;
+  return (
+    <Container color={name} size={size}>
+      {icons[name]}
+    </Container>
+  );
 }
