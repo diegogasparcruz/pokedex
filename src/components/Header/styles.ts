@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 export const Container = styled.header`
   display: flex;
   flex-direction: column;
-  padding: 2.5rem 2.5rem 0;
+  padding-top: 2.5rem;
 
   .inputSearch {
     margin-top: 1.5625rem;

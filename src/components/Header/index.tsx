@@ -1,9 +1,11 @@
-import { Icon } from 'components/Icon';
-import { Input } from 'components/Input';
+import React from 'react';
+
+import Icon from 'components/Icon';
+import Input from 'components/Input';
 
 import { Container, Filters, Title } from './styles';
 
-export function Header() {
+const Header: React.FC = () => {
   return (
     <Container>
       <Filters>
@@ -29,4 +31,6 @@ export function Header() {
       </Input>
     </Container>
   );
-}
+};
+
+export default Header;

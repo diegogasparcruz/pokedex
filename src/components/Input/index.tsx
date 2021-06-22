@@ -10,7 +10,7 @@ interface InputProps {
   className: string;
 }
 
-export const Input = React.forwardRef<HTMLInputElement, InputProps>(
+const Input = React.forwardRef<HTMLInputElement, InputProps>(
   ({ children, type, name, placeholder, className }, ref) => {
     const [isFocused, setIsFocused] = useState(false);
 
@@ -39,3 +39,5 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
     );
   }
 );
+
+export default Input;
