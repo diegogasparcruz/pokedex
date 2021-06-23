@@ -24,6 +24,7 @@ export const Container = styled.div<ContainerProps>`
   span {
     line-height: 14px;
     padding: 5px;
+    text-transform: capitalize;
 
     ${({ theme }) => {
       return css`
