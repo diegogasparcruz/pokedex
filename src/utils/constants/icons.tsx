@@ -1,5 +1,13 @@
 // ICONS
-import { Back, Front, Generation, Search, Sort } from 'static/icons';
+import {
+  Back,
+  Front,
+  Generation,
+  Search,
+  Sort,
+  Patterns,
+  Pokeball,
+} from 'static/icons';
 
 // TYPES ICON
 import {
@@ -29,6 +37,8 @@ export const icons = {
   generation: <Generation />,
   search: <Search />,
   sort: <Sort />,
+  patterns: <Patterns />,
+  pokeball: <Pokeball />,
   bug: <Bug />,
   dark: <Dark />,
   dragon: <Dragon />,
