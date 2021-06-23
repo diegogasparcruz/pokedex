@@ -40,9 +40,7 @@ export const Container = styled.div<ContainerProps>`
     > img {
       filter: grayscale(0);
       position: relative;
-      animation-name: pokemon;
-      animation-duration: 0.3s;
-      animation-iteration-count: 2;
+      animation: pokemon 0.3s 2;
     }
   }
 
