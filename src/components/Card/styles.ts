@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 import { rgba } from 'polished';
 
 interface ContainerProps {
-  color: string;
+  color?: string;
 }
 
 export const Container = styled.div<ContainerProps>`
@@ -13,8 +13,10 @@ export const Container = styled.div<ContainerProps>`
   ${({ theme, color }) => {
     return css`
       background: ${theme.colors.backgroundType[color]};
-      box-shadow: 0px 10px 20px
-        ${rgba(`${theme.colors.backgroundType[color]}`, 0.4)};
+      box-shadow: 0px 10px 20px ${rgba(`${theme.colors.grey400}`, 0.4)};
+
+      // TODO: alterar para cor específica
+      /* ${rgba(`${theme.colors.backgroundType[color]}`, 0.4)}; */
     `;
   }};
 
