@@ -1,23 +1,48 @@
+import { useCallback, useEffect, useState } from 'react';
 import Head from 'next/head';
-import { useFetch } from 'hooks/useFetch';
+import api from 'services/api';
 
 import { Header, Card } from 'components';
 
-import { Container, Main } from 'styles/pages/Home';
+import { Container, Main, Footer } from 'styles/pages/Home';
 
-interface Pokemon {
+interface PokemonsProps {
   name: string;
   url: string;
 }
-interface DataProps {
-  count: number;
-  next: string;
-  previous: string;
-  results: Pokemon[];
-}
 
 export default function Home() {
-  const { data, error } = useFetch<DataProps>('pokemon');
+  const LIMIT_POKEMON = 20;
+
+  const [pokemons, setPokemons] = useState<PokemonsProps[]>([]);
+  const [offsetApi, setOffsetApi] = useState(LIMIT_POKEMON);
+
+  useEffect(() => {
+    api
+      .get('pokemon', {
+        params: {
+          limit: LIMIT_POKEMON,
+        },
+      })
+      .then(response => {
+        setPokemons(response.data.results);
+      });
+  }, []);
+
+  const handleMorePokemons = useCallback(
+    async offset => {
+      const response = await api.get(`/pokemon`, {
+        params: {
+          limit: LIMIT_POKEMON,
+          offset,
+        },
+      });
+
+      setPokemons(pokemons => [...pokemons, ...response.data.results]);
+      setOffsetApi(offsetApi => Number(offsetApi + LIMIT_POKEMON));
+    },
+    [LIMIT_POKEMON]
+  );
 
   return (
     <Container>
@@ -28,16 +53,16 @@ export default function Home() {
       <Header />
 
       <Main>
-        {error && <h1>Ocorreu algum erro: {JSON.stringify(error)}</h1>}
-
-        {!data ? (
-          <h1>loading...</h1>
-        ) : (
-          data?.results.map((pokemon, index) => (
-            <Card key={index} name={pokemon.name} />
-          ))
-        )}
+        {pokemons.map((pokemon, index) => (
+          <Card key={index} name={pokemon.name} />
+        ))}
       </Main>
+
+      <Footer>
+        <button type="button" onClick={() => handleMorePokemons(offsetApi)}>
+          Load more
+        </button>
+      </Footer>
     </Container>
   );
 }

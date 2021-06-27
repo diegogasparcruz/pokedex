@@ -32,7 +32,7 @@ const Card: React.FC<CardProps> = ({ name }) => {
         types: types.map(({ type }) => type.name),
       });
     });
-  }, []);
+  }, [name]);
 
   return (
     <Container color={pokemon?.types[0]}>

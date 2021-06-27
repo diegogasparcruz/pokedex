@@ -24,10 +24,6 @@ export const Container = styled.div<ContainerProps>`
   justify-content: space-between;
   align-items: center;
 
-  & + div {
-    margin-top: 1.875rem;
-  }
-
   img {
     width: 130px;
     height: 130px;
