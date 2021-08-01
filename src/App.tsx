@@ -1,11 +1,9 @@
-import React from "react";
+import React from 'react';
 
-function App() {
+export default function App() {
   return (
     <div className="App">
       <h1>POKEDEX</h1>
     </div>
   );
 }
-
-export default App;
