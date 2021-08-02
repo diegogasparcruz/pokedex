@@ -1,9 +1,5 @@
-import React from 'react';
+import AppRoutes from 'pages/AppRoutes';
 
 export default function App() {
-  return (
-    <div className="App">
-      <h1>POKEDEX</h1>
-    </div>
-  );
+  return <AppRoutes />;
 }
